@@ -1,0 +1,26 @@
+{
+  "name": "vuejs",
+  "version": "1.0.0",
+  "description": "Vue.js construction - step by step",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "step",
+    "by",
+    "step",
+    "js"
+  ],
+  "author": "Ivan Medina <medinadiazivan@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-component-build": "^0.5.3",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-mocha": "^1.0.2"
+  }
+}
