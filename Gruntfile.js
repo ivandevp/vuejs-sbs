@@ -1,21 +1,22 @@
 module.exports = function (grunt) {
 
 	grunt.initConfig({
-		component_build: {
-			build: {
-				output: './dist/',
-				name: 'element',
-				styles: false,
-				scripts: true,
-				verbose: true
-			}
-		},
+		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
 			build: {
 				src: ['src/**/*.js'],
 				options: {
 					jshintrc: './.jshintrc'
 				}
+			}
+		},
+		componentbuild: {
+			build: {
+				output: './dist/',
+				name: 'element',
+				styles: false,
+				scripts: true,
+				verbose: true
 			}
 		},
 		mocha: {
@@ -30,7 +31,7 @@ module.exports = function (grunt) {
 		watch: {
 			component: {
 				files: ['src/**/*.js', 'component.json'],
-				tasks: 'component_build'
+				tasks: 'componentbuild'
 			}
 		}
 	});
@@ -40,6 +41,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-component-build');
 	grunt.loadNpmTasks('grunt-mocha');
 	grunt.registerTask('test', ['mocha']);
-	grunt.registerTask('default', ['jshint', 'component_build', 'mocha']);
+	grunt.registerTask('default', ['jshint', 'componentbuild', 'mocha']);
 
 };
